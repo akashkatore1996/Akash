@@ -1,0 +1,11 @@
+<aura:component implements="force:appHostable,force:lightningQuickAction" >
+	<lightning:input type="text" label="Enter First name :"  placeholder="Enter First name..." required="true" />
+    <lightning:input type="text" label="Enter Last name :"/>
+    <lightning:input type="email" label="Email :"/>
+    <lightning:input type="text" label="Enter Account Number :" placeholder="Enter User ID..." required="true" />
+    <lightning:input type="text" label="Required password :" required="true" />
+    <lightning:input type="date" label="Date To Visit :" />
+    
+    <lightning:input type="toggle" label="Visit :" required="true"/>
+    <lightning:input type="file" label="Attachments :" required="true"/>
+</aura:component>

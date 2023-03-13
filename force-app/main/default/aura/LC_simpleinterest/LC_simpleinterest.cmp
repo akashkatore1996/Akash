@@ -1,0 +1,16 @@
+<aura:component>
+	<aura:attribute type="Integer" name="principal" />
+    <aura:attribute type="Integer" name="rate" />
+    <aura:attribute type="Integer" name="time" />
+    <aura:attribute type="Integer" name="result" />
+       <lightning:card title="Simple Interest calculation" class="slds-p-left_large slds-p-right_large" iconName="utility:moneybag">
+        <aura:set attribute="actions">
+        <lightning:button label="Calculate" variant="brand" onclick="{!c.cal}" />
+        </aura:set>
+    	<lightning:input label="Enter Principal Amunt" value="{!v.principal}"></lightning:input>
+        <lightning:input label="Enter Rate" value="{!v.rate}"></lightning:input>
+        <lightning:input label="Enter Time" value="{!v.time}"></lightning:input>
+        <b>Interest Amount Is:-</b>
+           {!v.result}
+    </lightning:card>
+</aura:component>

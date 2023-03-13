@@ -1,0 +1,17 @@
+<aura:component >
+    <!-- Attribute declaration-->
+    <aura:attribute name="fNumber" type="Integer"/>
+    <aura:attribute name="sNumber" type="Integer"/>
+    <aura:attribute name='result' type="integer"/>
+    <!--input -->
+   	<lightning:card title="Calculate Number" iconName="utility:answer" class="slds-p-left_large slds-p-right_large ">
+        <lightning:input label="Enter first Number" value="{!v.fNumber}"></lightning:input>
+        <lightning:input label="Enter Second Number" value="{!v.sNumber}"></lightning:input>
+        
+        <aura:set attribute="actions">
+            <lightning:button label="Calculate" variant="brand" onclick="{!c.handleCalculate}"/>
+        </aura:set>
+        <p></p>
+        <b>The result is </b>{!v.result}
+    </lightning:card>
+</aura:component>

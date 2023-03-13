@@ -1,0 +1,46 @@
+<apex:page standardController="Account" recordSetVar="akash" sidebar="false" showHeader="false" >
+    <style>
+        .active    
+                {
+                background:skyblue;
+                }
+        .center
+                {
+                text-align:center;
+                }
+    </style>
+   <apex:form >
+    <apex:pageBlock >
+
+        <apex:variable var="rowNumber" value="{!1}"/>
+        <apex:pageBlockTable value="{!akash}" var="acc" columnClasses="active" >
+            <apex:column > 
+                <apex:inputCheckbox />
+                <apex:facet name="header">
+                    <apex:inputCheckbox />
+                </apex:facet> 
+            </apex:column>
+            <apex:column > 
+              {!rowNumber}
+            </apex:column>
+            <apex:column value="{!acc.Name}" headerValue="All Name" headerClass="center"/>
+            <apex:column value="{!acc.AccountNumber}"/>
+            <apex:column value="{!acc.Phone}"/>
+            <apex:column value="{!acc.Industry}"/>
+            <apex:column value="{!acc.Type}"/>
+            <apex:column >
+                <apex:variable var="rowNumber" value="{!rowNumber+1}"/>
+            </apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    
+    
+    <apex:panelGrid columns="4" border="5" cellspacing="5" style="margin-inline:auto">
+        <apex:commandButton action="{!Previous}" rendered="{!hasPrevious}" value="Go Previous Page"></apex:commandButton>
+        <apex:commandButton action="{!Previous}" rendered="{!hasPrevious}" value="Go Previous Page"></apex:commandButton>
+        <apex:commandButton action="{!Last}" value="Last"></apex:commandButton>
+        <apex:commandLink action="{!Next}" rendered="{!hasNext}"> Go Next Page </apex:commandLink>
+    </apex:panelGrid>
+   </apex:form>
+    
+</apex:page>
